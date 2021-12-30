@@ -53,6 +53,18 @@ try{
             $this->query("USE `$database`");
         }
 
+        function check_database($database){
+            $fetch = $this->fetch("SHOW DATABASES LIKE '$database'");
+
+            if(count($fetch)){
+                $this->switch_database($database);
+
+                return true;
+            }else{
+                return false;
+            }
+        }
+
         function __destruct(){
             $this->pdo = null;
         }

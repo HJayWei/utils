@@ -7,9 +7,11 @@ trait Commonality{
     private $path_config = "/var/www/html/config/conf.json";
 
     private function get_config(){
-        $data = file_get_contents($this->path_config);
-
-        return json_decode($data);
+        if(is_file($this->path_config)){
+            return json_decode(file_get_contents($this->path_config));
+        }else{
+            throw new Exception('Have not configuration file on system.');
+        }
     }
 
 

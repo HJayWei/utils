@@ -4,7 +4,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__."/utils/PDO_MySQL.php";
 
-use utils\PDO_MySQL;
+use utils\Databases\PDO_MySQL;
 
 $pdo_mysql = new PDO_MySQL();
 

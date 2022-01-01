@@ -1,5 +1,5 @@
 <?php
-namespace Utils;
+namespace Utils\Databases;
 
 require_once __DIR__."/Commonality.php";
 

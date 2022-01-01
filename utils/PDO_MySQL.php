@@ -65,6 +65,12 @@ try{
             }
         }
 
+        function check_table($table){
+            $fetch = $this->fetch("SHOW TABLES LIKE '$table'");
+
+            return filter_var(count($fetch), FILTER_VALIDATE_BOOLEAN);
+        }
+
         function __destruct(){
             $this->pdo = null;
         }

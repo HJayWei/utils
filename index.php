@@ -8,9 +8,7 @@ use utils\PDO_MySQL;
 
 $pdo_mysql = new PDO_MySQL();
 
-$pdo_mysql->check_database("mysql1");
-var_dump($pdo_mysql->fetch("SHOW TABLES;"));
-echo "<br><br>";
 $pdo_mysql->check_database("mysql");
-var_dump($pdo_mysql->fetch("SHOW TABLES;"));
+var_dump($pdo_mysql->check_table("user"));
+var_dump($pdo_mysql->check_table("user1"));
 ?>
